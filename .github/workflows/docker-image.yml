@@ -30,4 +30,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: my-dockerhub-username/my-custom-openvpn:latest 
+        tags: andreusimus3/my-custom-openvpn:latest 
