@@ -1,0 +1,12 @@
+{
+  "build": {
+    "dockerfilePath": "Dockerfile",
+    "context": "."
+  },
+  "deploy": {
+    "command": "docker-compose up -d"
+  },
+  "envs": {
+    "DEBUG": "1"
+  }
+} 
