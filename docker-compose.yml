@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   openvpn:
-    image: my-custom-openvpn
+    image: andreusimus3/my-custom-openvpn
     container_name: openvpn
     cap_add:
       - NET_ADMIN
