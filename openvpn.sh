@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Function to build the Docker image with platform specification
+build_image() {
+    docker build --platform=linux/amd64 -t my-custom-openvpn .
+    echo "Docker image 'my-custom-openvpn' built successfully with platform linux/amd64."
+}
+
 # Function to set up OpenVPN
 setup_openvpn() {
     mkdir -p openvpn-data/conf
@@ -35,7 +41,9 @@ retrieve_client_config() {
 }
 
 # Main script logic
-if [ "$1" == "setup" ]; then
+if [ "$1" == "build" ]; then
+    build_image
+elif [ "$1" == "setup" ]; then
     setup_openvpn
 elif [ "$1" == "start" ]; then
     start_openvpn
@@ -44,6 +52,6 @@ elif [ "$1" == "gen_cert" ]; then
 elif [ "$1" == "get_client" ]; then
     retrieve_client_config "$@"
 else
-    echo "Invalid option. Use 'setup' to configure, 'start' to run the OpenVPN server, 'gen_cert' to generate a user certificate, or 'get_client' to retrieve a client configuration."
+    echo "Invalid option. Use 'build' to build the Docker image, 'setup' to configure, 'start' to run the OpenVPN server, 'gen_cert' to generate a user certificate, or 'get_client' to retrieve a client configuration."
     exit 1
 fi
