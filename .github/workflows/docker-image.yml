@@ -30,4 +30,4 @@ jobs:
       with:
         context: .
         push: true
-        tags: ${{ env.DOCKER_USERNAME }}/my-custom-openvpn:latest 
+        tags: andreusimus3.DOCKER_USERNAME/my-custom-openvpn:latest 
