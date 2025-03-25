@@ -1,5 +1,5 @@
-# Use the official kylemanna/openvpn image as the base with platform specification
-FROM --platform=linux/amd64 kylemanna/openvpn
+# Use the official kylemanna/openvpn image as the base
+FROM kylemanna/openvpn
 
 # Add any custom configuration or scripts here
 # For example, you could copy custom scripts or configuration files
